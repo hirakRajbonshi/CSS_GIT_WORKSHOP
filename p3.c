@@ -1,7 +1,12 @@
 #include <stdio.h>
 
 int factorial(int n) {
-    // write the function to calculate the factorial of n
+    int fact = 1;
+    for (int i=2;i<=n;i++)
+    {
+        fact = fact * i;
+    }
+    return fact;
 
 }
 

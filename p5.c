@@ -4,6 +4,7 @@
 float celsiusToFahrenheit(float celsius);
 float fahrenheitToCelsius(float fahrenheit);
 
+
 int main() {
     int choice;
     float temp, convertedTemp;
@@ -18,11 +19,14 @@ int main() {
     scanf("%f", &temp);
 
     if (choice == 1) {
+         convertedTemp =  celsiusToFahrenheit(temp);
+
         // TODO: Call celsiusToFahrenheit and display result
-        printf("Conversion not implemented yet.\n");
+        printf("Converted Temperature is %.2f", convertedTemp);
     } else if (choice == 2) {
+         convertedTemp =  fahrenheitToCelsius(temp);
         // TODO: Call fahrenheitToCelsius and display result
-        printf("Conversion not implemented yet.\n");
+        printf("Converted Temperature is %.2f", convertedTemp);
     } else {
         printf("Invalid choice!\n");
     }
@@ -32,10 +36,14 @@ int main() {
 
 // TODO: Implement the celsiusToFahrenheit function
 float celsiusToFahrenheit(float celsius) {
-    return 0.0; 
+   
+    return (celsius*1.8)+32;
+
 }
 
 // TODO: Implement the fahrenheitToCelsius function
 float fahrenheitToCelsius(float fahrenheit) {
-    return 0.0; 
+   
+    return (fahrenheit-32)/1.8;
+
 }

@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include<time.h>
 
-int getComputerChoice();
+int getComputerChoice(int computerChoice);
 void showChoice(int choice);
 void determineWinner(int playerChoice, int computerChoice);
 
@@ -22,7 +23,7 @@ int main() {
         return 0;
     }
 
-    computerChoice = getComputerChoice();
+    computerChoice = getComputerChoice(computerChoice);
 
     printf("\nYou chose: ");
     showChoice(playerChoice);
@@ -34,14 +35,24 @@ int main() {
     return 0;
 }
 
-int getComputerChoice() {
+int getComputerChoice(int computerChoice) {
+     srand(time(0));
+    computerChoice = rand() %3 + 1;
+    return computerChoice;
 
 }
-
 void showChoice(int choice) {
+    printf("%d\n",choice);
 
 }
 
 void determineWinner(int playerChoice, int computerChoice) {
+    if((playerChoice==1 && computerChoice==3 )|| (playerChoice==2 && computerChoice==1 )|| (playerChoice==3 && computerChoice==2)){
+        printf("player wins\n");
+    }
+    if(playerChoice==computerChoice){
+        printf("It's a draw\n");
+    }
+    else{ printf("you lose\n");}
     
 }
